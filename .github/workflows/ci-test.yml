@@ -16,7 +16,7 @@ jobs:
         with:
           node-version-file: .node-version
         env:
-          NPM_TOKEN: ${{secrets:GITHUB_TOKEN}}
+          NPM_TOKEN: ${{ secrets:GITHUB_TOKEN }}
       - uses: oven-sh/setup-bun@v1
 
       - name: Install
