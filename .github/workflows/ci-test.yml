@@ -1,0 +1,25 @@
+name: CI test
+
+on:
+  push:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+        env:
+          NPM_TOKEN: ${{secrets:GITHUB_TOKEN}}
+      - uses: oven-sh/setup-bun@v1
+
+      - name: Install
+        run: npm ci
+
+      - run: bun src/index.ts
