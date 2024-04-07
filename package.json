@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mmrakt/orval-test-backend": "^0.1.0",
+    "@mmrakt/api": "^0.3.0",
     "axios": "^1.6.8",
     "typescript": "^5.4.4"
   }
